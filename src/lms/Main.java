@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Library library = new Library();
-
+        try{
         Book b1 = new Book("Clean Code", "Robert C. Martin", "978-0132350884");
 
         Book b2 = new Book("Effective Java", "Joshua Bloch", "978-0134685991");
@@ -31,14 +31,18 @@ public class Main {
         library.listBooks();
         library.listMembers();
 
+        } catch (IllegalArgumentException e) {
+            System.err.println("Rejected invalid book: " + e.getMessage());
+        }
+
+
         try {
 
             library.addBook(new Book("", "Nobody", "000-0000000000"));
 
         } catch (IllegalArgumentException e) {
 
-            System.err.println("Rejected invalid book: " + e.getMessage()
-            );
+            System.err.println("Rejected invalid book: " + e.getMessage());
         }
     }
 }
