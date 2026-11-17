@@ -20,10 +20,10 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        if(this.author ==null || this.author.isBlank()){
+        if(author ==null || author.isBlank()){
             throw new IllegalArgumentException("Author can not be Blank.");
         }
-        this.author = this.author;
+        this.author = author;
     }
 
     public void setIsbn(String isbn) {
