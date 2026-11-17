@@ -31,18 +31,12 @@ public class Main {
         library.listBooks();
         library.listMembers();
 
+        library.addBook(new Book("", "Nobody", "000-0000000000"));
+
         } catch (IllegalArgumentException e) {
             System.err.println("Rejected invalid book: " + e.getMessage());
         }
 
 
-        try {
-
-            library.addBook(new Book("", "Nobody", "000-0000000000"));
-
-        } catch (IllegalArgumentException e) {
-
-            System.err.println("Rejected invalid book: " + e.getMessage());
-        }
     }
 }
